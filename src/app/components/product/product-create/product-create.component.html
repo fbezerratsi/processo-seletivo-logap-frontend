@@ -1,0 +1,30 @@
+<mat-card>
+    <mat-card-title>Novo Produto</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome"
+                [(ngModel)]="product.name" name="name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Preço (R$)"
+                [(ngModel)]="product.price" name="price">
+        </mat-form-field>
+        
+        <select class="form-control" #Select [(ngModel)]="product.category_id" name="category_id">
+            <option selected>Selecione...</option>
+            <option *ngFor="let category of categories" [ngValue]="category.category_id">{{ category.name }}</option>
+        </select>
+        <select class="form-control" #Select [(ngModel)]="product.provider_id" name="provider_id">
+            <option selected>Selecione...</option>
+            <option *ngFor="let provider of providers" [ngValue]="provider.provider_id">{{ provider.name }}</option>
+        </select>
+            
+    </form>
+    <button mat-raised-button (click)="createProduct()" color="primary">
+        Salvar
+    </button>
+    
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>
