@@ -11,7 +11,7 @@ import { environment } from '../../../environments/environment'
   providedIn: "root",
 })
 export class CategoryService {
-  baseUrl = environment.URL + "/categories";
+  baseUrl = environment.apiUrl + "/categories";
   
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}

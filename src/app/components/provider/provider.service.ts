@@ -11,7 +11,7 @@ import { environment } from '../../../environments/environment'
   providedIn: "root",
 })
 export class ProviderService {
-  baseUrl = environment.URL + "/providers";
+  baseUrl = environment.apiUrl + "/providers";
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 
