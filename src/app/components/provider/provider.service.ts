@@ -5,8 +5,7 @@ import { Provider } from "./provider.model";
 import { Observable, EMPTY } from "rxjs";
 import { map, catchError } from "rxjs/operators";
 
-//import { environment } from '../../../environments/environment'
-import { environment } from '../../../environments/environment.prod'
+import { environment } from '../../../environments/environment'
 
 @Injectable({
   providedIn: "root",
