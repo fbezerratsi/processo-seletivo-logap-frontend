@@ -9,13 +9,19 @@ import { ProviderService } from '../provider.service';
 })
 export class ProviderReadComponent implements OnInit {
   providers: Provider[]
+  providersStock: Provider[]
   displayedColumns = ['name', 'action']
-  
+  displayedColumnsProviderStock = ['name', 'nameProduct', 'amount']
+
   constructor(private providerService: ProviderService) { }
 
   ngOnInit(): void {
     this.providerService.read().subscribe(providers => {
       this.providers = providers
+    })
+    this.providerService.readProviderSotck().subscribe(providers => {
+      this.providersStock = providers
+      console.log('Provider: ', this.providersStock)
     })
   }
 

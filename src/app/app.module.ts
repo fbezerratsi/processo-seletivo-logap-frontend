@@ -47,6 +47,7 @@ import { StockCrudComponent } from './views/stock-crud/stock-crud.component';
 import { StockReadComponent } from './components/stock/stock-read/stock-read.component';
 import { StockCreateComponent } from './components/stock/stock-create/stock-create.component';
 import { StockUpdateComponent } from './components/stock/stock-update/stock-update.component';
+import { ProductZeroComponent } from './components/product/product-zero/product-zero.component';
 
 registerLocaleData(localePt);
 
@@ -77,6 +78,7 @@ registerLocaleData(localePt);
     StockReadComponent,
     StockCreateComponent,
     StockUpdateComponent,
+    ProductZeroComponent,
   ],
   imports: [
     BrowserModule,

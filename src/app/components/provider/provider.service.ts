@@ -37,6 +37,12 @@ export class ProviderService {
       catchError((e) => this.errorHandler(e))
     );
   }
+  readProviderSotck(): Observable<Provider[]> {
+    return this.http.get<Provider[]>(this.baseUrl+"-stock-product").pipe(
+      map((obj) => obj),
+      catchError((e) => this.errorHandler(e))
+    );
+  }
 
   readById(provider_id: string): Observable<Provider> {
     const url = `${this.baseUrl}/${provider_id}`;

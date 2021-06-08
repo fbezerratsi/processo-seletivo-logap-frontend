@@ -8,15 +8,20 @@ import { CategoryService } from '../category.service';
   styleUrls: ['./category-read.component.css']
 })
 export class CategoryReadComponent implements OnInit {
-
   categories: Category[]
-  displayedColumns = ['name', 'nameProducts', 'amount', 'action']
+  
+  categoriesStock: Category[]
+  displayedColumns = ['name', 'action']
+  displayedColumnsCategoryStock = ['name', 'nameProducts', 'amount', 'action']
 
   constructor(private categoryService: CategoryService) { }
 
   ngOnInit(): void {
-    this.categoryService.readCategoryStock().subscribe(categories => {
+    this.categoryService.read().subscribe(categories => {
       this.categories = categories
+    })
+    this.categoryService.readCategoryStock().subscribe(categories => {
+      this.categoriesStock = categories
       console.log("Categoria: ", this.categories)
     })
   }

@@ -38,6 +38,13 @@ export class ProductService {
     );
   }
 
+  readProductZero(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.baseUrl+"-zero").pipe(
+      map((obj) => obj),
+      catchError((e) => this.errorHandler(e))
+    );
+  }
+
   readById(product_id: string): Observable<Product> {
     const url = `${this.baseUrl}/update/${product_id}`;
     return this.http.get<Product>(url).pipe(
