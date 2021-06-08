@@ -11,7 +11,7 @@ import { environment } from '../../../environments/environment'
   providedIn: "root",
 })
 export class StockService {
-  baseUrl = environment.URL + "/stocks";
+  baseUrl = environment.apiUrl + "/stocks";
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 
