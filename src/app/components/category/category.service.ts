@@ -10,6 +10,7 @@ import { map, catchError } from "rxjs/operators";
 })
 export class CategoryService {
   baseUrl = "http://localhost:3000/categories";
+  
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 
