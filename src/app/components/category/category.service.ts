@@ -5,11 +5,13 @@ import { Category } from "./category.model";
 import { Observable, EMPTY } from "rxjs";
 import { map, catchError } from "rxjs/operators";
 
+import { environment } from '../../../environments/environment'
+
 @Injectable({
   providedIn: "root",
 })
 export class CategoryService {
-  baseUrl = "http://localhost:3000/categories";
+  baseUrl = environment.URL + "/categories";
   
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}

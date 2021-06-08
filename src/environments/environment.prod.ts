@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  URL: 'https://processo-seletivo-logap-backed.herokuapp.com/'
 };

@@ -5,11 +5,13 @@ import { Stock } from "./stock.model";
 import { Observable, EMPTY } from "rxjs";
 import { map, catchError } from "rxjs/operators";
 
+import { environment } from '../../../environments/environment'
+
 @Injectable({
   providedIn: "root",
 })
 export class StockService {
-  baseUrl = "http://localhost:3000/stocks";
+  baseUrl = environment.URL + "/stocks";
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 
